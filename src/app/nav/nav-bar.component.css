@@ -1,0 +1,134 @@
+
+.mainMenu {
+    background: #ffffff;
+    min-height: 90px;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line: center;
+    align-content: center;
+    top: -100px;
+    width: 100%;
+    z-index: 15;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    box-shadow: 4px 4px 84px -26px rgba(0, 0, 0, 0.75);
+}
+
+.mainMenu.menuOpened {
+    top: 0 !important;
+}
+
+.mainMenu.menuScroll {
+    top: 0 !important;
+}
+
+.mainMenu .logoHolder {
+    margin-left: 30px;
+}
+
+.mainMenu .menuHolder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    margin-right: 30px;
+}
+
+.mainMenu .menuHolder .menuContent .navBox {
+    margin-bottom: 0;
+}
+
+.mainMenu .menuHolder .menuContent .navBox li{
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.mainMenu .menuHolder .menuContent .navBox li a {
+    color: #f3a492;
+    font-size: 20px;
+    font-family: "jaapokkiregular";
+    padding-bottom: 31px;
+}
+
+.mainMenu .menuHolder .navBox {
+    padding-right: 10px;
+}
+
+.mainMenu .menuHolder .openCloseButton {
+    padding-left: 25px;
+}
+
+.mainMenu .menuHolder .openCloseButton.closeHamburger {
+    display: none;
+}
+
+.mainMenu .menuHolder .openCloseButton button {
+    border: 0;
+    background: transparent;
+}
+
+.mainMenu .menuHolder .pageTop {
+    padding-left: 30px;
+    padding-right: 7px;
+    display: none;
+}
+
+.mainMenu .menuHolder .pageTop.openPageTop {
+    display: block;
+}
+
+.mainMenu .menuHolder .menuContent .navBox li a::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: #f3a492;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    transform: translateY(-25px);
+}
+
+.mainMenu .menuHolder .menuContent .navBox li a:hover::after {
+    opacity: 1;
+    height: 3px;
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+
+}
+
+  
