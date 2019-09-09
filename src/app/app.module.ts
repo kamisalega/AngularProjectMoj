@@ -8,11 +8,12 @@ import {
     CreateEventComponent,
     EventsListResolverService,
     EventRouteActivatorService,
-    EventDetailsComponent, 
+    EventDetailsComponent,
     EventAboutComponent,
-    EventMainSectionComponent
+    EventMainSectionComponent, CreateSessionComponent
 
-} from './events';
+
+} from './events/index';
 import {NavBarComponent} from './nav/nav-bar.component';
 import {appRoutes} from "../routes";
 import {RouterModule} from "@angular/router";
@@ -31,9 +32,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         EventDetailsComponent,
         CreateEventComponent,
         Error404Component,
-        EventAboutComponent,  
+        EventAboutComponent,
         EventMainSectionComponent,
-        EventListComponent
+        EventListComponent,
+        CreateSessionComponent
+       
 
 
     ],
