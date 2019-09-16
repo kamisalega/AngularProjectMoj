@@ -4,7 +4,7 @@ import {ISession, restrictedWords} from "../../shared";
 
 
 @Component({
-    selector: 'app-create-session',
+    selector: 'create-session',
     templateUrl: './create-session.component.html',
     styleUrls: ['./create-session.component.css']
 })
@@ -26,8 +26,7 @@ export class CreateSessionComponent implements OnInit {
         this.level = new FormControl('', Validators.required)
         this.abstract = new FormControl('',
             [Validators.required,
-                Validators.maxLength(400),
-                restrictedWords(['foo', 'bar'])])
+                Validators.maxLength(400), restrictedWords(['foo', 'bar'])])
 
 
         this.newSessionForm = new FormGroup({
