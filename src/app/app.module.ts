@@ -24,6 +24,7 @@ import {ToastrService} from "./common/toastr.service";
 import {Error404Component} from './errors/error404/error404.component';
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CollapsibleWellComponent } from './common/callopsaible-well/collapsible-well.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         EventMainSectionComponent,
         EventListComponent,
         CreateSessionComponent,
-        SessionListComponent
+        SessionListComponent,
+        CollapsibleWellComponent
        
 
 
