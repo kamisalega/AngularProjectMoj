@@ -10,7 +10,9 @@ import {
     EventRouteActivatorService,
     EventDetailsComponent,
     EventAboutComponent,
-    EventMainSectionComponent, CreateSessionComponent
+    EventMainSectionComponent, 
+    CreateSessionComponent,
+    SessionListComponent
 
 
 } from './events/index';
@@ -35,7 +37,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         EventAboutComponent,
         EventMainSectionComponent,
         EventListComponent,
-        CreateSessionComponent
+        CreateSessionComponent,
+        SessionListComponent
        
 
 
