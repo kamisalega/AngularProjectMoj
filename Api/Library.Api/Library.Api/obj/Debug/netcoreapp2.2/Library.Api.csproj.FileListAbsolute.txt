@@ -1,0 +1,15 @@
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.dll.config
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.deps.json
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.runtimeconfig.json
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.runtimeconfig.dev.json
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.dll
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/bin/Debug/netcoreapp2.2/Library.Api.pdb
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.csprojAssemblyReference.cache
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.csproj.CoreCompileInputs.cache
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.RazorAssemblyInfo.cache
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.RazorAssemblyInfo.cs
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.AssemblyInfoInputs.cache
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.AssemblyInfo.cs
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.RazorTargetAssemblyInfo.cache
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.dll
+/Users/kamilsalega/Documents/Programowanie/AngularProjectMoj/Api/Library.Api/Library.Api/obj/Debug/netcoreapp2.2/Library.Api.pdb
