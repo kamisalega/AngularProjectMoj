@@ -8,7 +8,18 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AuthorsController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="Author.cs" t="Include" />
+          <e p="Book.cs" t="Include" />
+          <e p="LibraryContext.cs" t="Include" />
+          <e p="LibraryContextExtensions.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="AuthorsResourceParameters.cs" t="Include" />
+          <e p="PagedList.cs" t="Include" />
         </e>
         <e p="Library.Api.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -21,6 +32,10 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="ILibraryRepository.cs" t="Include" />
+          <e p="LibraryRepository.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
       </e>
