@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Api.Controllers
 {
+   [Route("api/authors")]
     public class AuthorsController : Controller
     {
 
@@ -14,7 +15,7 @@ namespace Library.Api.Controllers
         }
         
         
-        [HttpGet("api/authors")]
+        [HttpGet()]
         public IActionResult GetAuthors()
         {
             var authorsFromRepo = _libraryRepository.GetAuthors();
