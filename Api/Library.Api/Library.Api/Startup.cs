@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using Library.Api.Entities;
+using Library.Api.Helpers;
 using Library.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,9 +45,11 @@ namespace Library.Api
             // it's better to store the connection string in an environment variable)
             var connectionString = Configuration["connectionStrings:libraryDBConnectionString"];
             services.AddDbContext<LibraryContext>(o => o.UseSqlServer(connectionString));
-
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             // register the repository
             services.AddScoped<ILibraryRepository, LibraryRepository>();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +66,7 @@ namespace Library.Api
                 app.UseExceptionHandler();
             }
 
-            libraryContext.EnsureSeedDataForContext();
+           
 
             app.UseMvc(); 
         }

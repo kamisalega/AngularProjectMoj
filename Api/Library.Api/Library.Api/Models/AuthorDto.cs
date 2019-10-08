@@ -10,6 +10,6 @@ namespace Library.Api.Models
 
         public int Age { get; set; }
 
-        public string Genere { get; set; }
+        public string Genre { get; set; }
     }
 }

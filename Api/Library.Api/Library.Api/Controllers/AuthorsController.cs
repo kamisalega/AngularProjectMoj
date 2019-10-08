@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using AutoMapper;
 using Library.Api.Helpers;
 using Library.Api.Models;
 using Library.Api.Services;
@@ -11,10 +13,12 @@ namespace Library.Api.Controllers
     {
 
         private ILibraryRepository _libraryRepository;
+        private readonly IMapper _mapper;
         
-        public AuthorsController(ILibraryRepository libraryRepository)
+        public AuthorsController(ILibraryRepository libraryRepository, IMapper mapper)
         {
             _libraryRepository = libraryRepository;
+            _mapper = mapper;
         }
         
         
@@ -22,23 +26,10 @@ namespace Library.Api.Controllers
         public IActionResult GetAuthors()
         {
             var authorsFromRepo = _libraryRepository.GetAuthors();
-
-            var authors = new List<AuthorDto>();
-
-            foreach (var author in authorsFromRepo)
-            {
-                authors.Add(new AuthorDto()
-                {
-                    Id = author.Id,
-                    Name = $"{author.FirstName} {author.LastName}",
-                    Genere = author.Genre,
-                    Age =  DateTimeOffsetExtensions.GetCurrentAge(author.DateOfBirth)
-                });
-                
-                
-            }
             
-            return new JsonResult(authors);
+            var authors = _mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
+
+            return Ok(authors);
         }
     }
     
