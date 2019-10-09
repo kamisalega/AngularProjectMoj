@@ -23,7 +23,7 @@ namespace Library.Api.Services
 
         public Author GetAuthor(Guid authorId)
         {
-            throw new NotImplementedException();
+            return _context.Authors.FirstOrDefault(a => a.Id == authorId);
         }
 
         public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)
@@ -48,7 +48,7 @@ namespace Library.Api.Services
 
         public bool AuthorExists(Guid authorId)
         {
-            throw new NotImplementedException();
+            return  _context.Authors.Any(a => a.Id == authorId);
         }
 
         public IEnumerable<Book> GetBooksForAuthor(Guid authorId)

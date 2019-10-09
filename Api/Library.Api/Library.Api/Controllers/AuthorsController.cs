@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using AutoMapper;
@@ -30,6 +31,22 @@ namespace Library.Api.Controllers
             var authors = _mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
 
             return Ok(authors);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GeTAuthor(Guid id)
+        {
+            
+            var authorFromRepo = _libraryRepository.GetAuthor(id);
+
+            if (authorFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            var author = _mapper.Map<AuthorDto>(authorFromRepo);
+
+            return Ok(author);
         }
     }
     
