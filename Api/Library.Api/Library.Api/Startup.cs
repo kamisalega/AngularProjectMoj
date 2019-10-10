@@ -9,6 +9,7 @@ using Library.Api.Helpers;
 using Library.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -63,7 +64,12 @@ namespace Library.Api
             }
             else
             {
-                app.UseExceptionHandler();
+                app.UseExceptionHandler(appBuilder => appBuilder.Run(
+                    async contex =>
+                    {
+                        contex.Response.StatusCode = 500;
+                        await contex.Response.WriteAsync("Nieoczekaiwny błąd. Spróbuj ponownie później.");
+                    }));
             }
 
            

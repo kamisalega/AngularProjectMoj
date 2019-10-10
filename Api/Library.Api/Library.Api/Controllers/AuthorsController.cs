@@ -26,11 +26,20 @@ namespace Library.Api.Controllers
         [HttpGet()]
         public IActionResult GetAuthors()
         {
-            var authorsFromRepo = _libraryRepository.GetAuthors();
+            try
+            {
+                
+                var authorsFromRepo = _libraryRepository.GetAuthors();
             
-            var authors = _mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
+                var authors = _mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
 
-            return Ok(authors);
+                return Ok(authors);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Wydażył się nieoczekiwany błąd. Spróbuj później.");
+            }            
+           
         }
 
         [HttpGet("{id}")]
