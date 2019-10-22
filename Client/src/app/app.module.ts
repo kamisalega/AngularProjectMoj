@@ -12,9 +12,8 @@ import {
     EventAboutComponent,
     EventMainSectionComponent, 
     CreateSessionComponent,
-    SessionListComponent
-
-
+    SessionListComponent,
+    DurationPipe
 } from './events/index';
 import {NavBarComponent} from './nav/nav-bar.component';
 import {appRoutes} from "../routes";
@@ -40,11 +39,8 @@ import {CollapsibleWellComponent} from "./common/collapsible-well/collapsible-we
         EventListComponent,
         CreateSessionComponent,
         SessionListComponent,
-        CollapsibleWellComponent
-        
-       
-
-
+        CollapsibleWellComponent,
+        DurationPipe
     ],
     imports: [
         BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule
