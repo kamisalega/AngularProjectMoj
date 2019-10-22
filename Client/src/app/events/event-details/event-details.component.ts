@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {EventService} from "../shared/event.service";
+import {EventService} from "../shared";
 import {ActivatedRoute} from "@angular/router";
 import {IEvent, ISession} from "../shared";
 
@@ -12,6 +12,7 @@ export class EventDetailsComponent implements OnInit {
 
     event: IEvent
     addMode: boolean
+    filterBy: string = 'all';
 
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
