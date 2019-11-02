@@ -19,12 +19,14 @@ import {NavBarComponent} from './nav/nav-bar.component';
 import {appRoutes} from "../routes";
 import {RouterModule} from "@angular/router";
 import {EventsAppComponent} from "./events/events-app/events-app.component";
-import {ToastrService} from "./common/toastr.service";
+import {TOASTR_TOKEN, Toastr} from "./common/toastr.service";
+import {TOASTR_TOKEN as TOASTR_TOKEN2} from "./common/toastr2.service";
 import {Error404Component} from './errors/error404/error404.component';
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CollapsibleWellComponent} from "./common/collapsible-well/collapsible-well.component";
 
+declare let toastr:Toastr = window['toastr'];
 
 @NgModule({
     declarations: [
@@ -47,7 +49,10 @@ import {CollapsibleWellComponent} from "./common/collapsible-well/collapsible-we
     ],
     providers: [
         EventService,
-        ToastrService,
+        {
+            provide: TOASTR_TOKEN,
+            useValue: toastr
+        },
         EventRouteActivatorService,
         EventsListResolverService,
         AuthService,
