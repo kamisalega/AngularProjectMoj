@@ -35,7 +35,7 @@ namespace Library.Api.Controllers
 
                 return Ok(authors);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return StatusCode(500, "Wydażył się nieoczekiwany błąd. Spróbuj później.");
             }            

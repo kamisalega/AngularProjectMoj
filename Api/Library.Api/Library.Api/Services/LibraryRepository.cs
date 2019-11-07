@@ -53,12 +53,12 @@ namespace Library.Api.Services
 
         public IEnumerable<Book> GetBooksForAuthor(Guid authorId)
         {
-            throw new NotImplementedException();
+            return _context.Books.Where(a => a.AuthorId == authorId).OrderBy(b => b.Title).ToList();
         }
 
         public Book GetBookForAuthor(Guid authorId, Guid bookId)
         {
-            throw new NotImplementedException();
+            return _context.Books.FirstOrDefault(a => a.AuthorId == authorId && a.Id == bookId);
         }
 
         public void AddBookForAuthor(Guid authorId, Book book)
