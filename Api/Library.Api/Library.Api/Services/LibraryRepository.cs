@@ -56,16 +56,14 @@ namespace Library.Api.Services
 
         public IEnumerable<Book> GetBooks(Guid authorId)
         {
-            author.Id = Guid.NewGuid();
-            _context.Authors.Add(author);
-            
-            if (author.Books.Any())
+            if (authorId == Guid.Empty)
             {
-                foreach (var book in author.Books)
-                {
-                    book.Id = Guid.NewGuid();
-                }
+                throw new ArgumentNullException(nameof(authorId));
             }
+
+            return _context.Books
+                .Where(c => c.AuthorId == authorId)
+                .OrderBy(c => c.Title).ToList();
         }
 
         public void UpdateBook(Book book)

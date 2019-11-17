@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using AutoMapper;
+using Library.Api.Entities;
 using Library.Api.Models;
 using Library.Api.ResourceParameters;
 using Library.Api.Services;
@@ -50,12 +51,12 @@ namespace Library.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateAuthor([FromBody] AuthorForCreationDto author)
+        public ActionResult CreateAuthor([FromBody] AuthorForCreationDto author)
         {
             if (author == null)
                 return BadRequest();
 
-            var authorEntity = _mapper.Map<Author>(author);
+            var authorEntity = _mapper.Map<Entities.Author>(author);
             
             _libraryRepository.AddAuthor(authorEntity);
 
