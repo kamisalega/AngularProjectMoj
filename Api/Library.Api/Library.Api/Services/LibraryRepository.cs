@@ -13,72 +13,151 @@ namespace Library.Api.Services
 
         public LibraryRepository(LibraryContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public IEnumerable<Author> GetAuthors()
+       public void AddBook(Guid authorId, Book book)
         {
-            return _context.Authors.OrderBy(a => a.FirstName).ThenBy(a => a.LastName);
+            if (authorId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(authorId));
+            }
+
+            if (book == null)
+            {
+                throw new ArgumentNullException(nameof(book));
+            }
+            // always set the AuthorId to the passed-in authorId
+            book.AuthorId = authorId;
+            _context.Books.Add(book); 
+        }         
+
+        public void DeleteBook(Book book)
+        {
+            _context.Books.Remove(book);
+        }
+  
+        public Book GetBook(Guid authorId, Guid bookId)
+        {
+            if (authorId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(authorId));
+            }
+
+            if (bookId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(bookId));
+            }
+
+            return _context.Books
+              .Where(c => c.AuthorId == authorId && c.Id == bookId).FirstOrDefault();
         }
 
-        public Author GetAuthor(Guid authorId)
+        public IEnumerable<Book> GetBooks(Guid authorId)
         {
-            return _context.Authors.FirstOrDefault(a => a.Id == authorId);
+            if (authorId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(authorId));
+            }
+
+            return _context.Books
+                        .Where(c => c.AuthorId == authorId)
+                        .OrderBy(c => c.Title).ToList();
         }
 
-        public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)
+        public void UpdateBook(Book book)
         {
-            throw new NotImplementedException();
+            // no code in this implementation
         }
 
         public void AddAuthor(Author author)
         {
-            throw new NotImplementedException();
-        }
+            if (author == null)
+            {
+                throw new ArgumentNullException(nameof(author));
+            }
 
-        public void DeleteAuthor(Author author)
-        {
-            throw new NotImplementedException();
-        }
+            // the repository fills the id (instead of using identity columns)
+            author.Id = Guid.NewGuid();
 
-        public void UpdateAuthor(Author author)
-        {
-            throw new NotImplementedException();
+            foreach (var book in author.Books)
+            {
+                book.Id = Guid.NewGuid();
+            }
+
+            _context.Authors.Add(author);
         }
 
         public bool AuthorExists(Guid authorId)
         {
-            return  _context.Authors.Any(a => a.Id == authorId);
+            if (authorId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(authorId));
+            }
+
+            return _context.Authors.Any(a => a.Id == authorId);
         }
 
-        public IEnumerable<Book> GetBooksForAuthor(Guid authorId)
+        public void DeleteAuthor(Author author)
         {
-            return _context.Books.Where(a => a.AuthorId == authorId).OrderBy(b => b.Title).ToList();
+            if (author == null)
+            {
+                throw new ArgumentNullException(nameof(author));
+            }
+
+            _context.Authors.Remove(author);
+        }
+        
+        public Author GetAuthor(Guid authorId)
+        {
+            if (authorId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(authorId));
+            }
+
+            return _context.Authors.FirstOrDefault(a => a.Id == authorId);
         }
 
-        public Book GetBookForAuthor(Guid authorId, Guid bookId)
+        public IEnumerable<Author> GetAuthors()
         {
-            return _context.Books.FirstOrDefault(a => a.AuthorId == authorId && a.Id == bookId);
+            return _context.Authors.ToList<Author>();
+        }
+         
+        public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)
+        {
+            if (authorIds == null)
+            {
+                throw new ArgumentNullException(nameof(authorIds));
+            }
+
+            return _context.Authors.Where(a => authorIds.Contains(a.Id))
+                .OrderBy(a => a.FirstName)
+                .OrderBy(a => a.LastName)
+                .ToList();
         }
 
-        public void AddBookForAuthor(Guid authorId, Book book)
+        public void UpdateAuthor(Author author)
         {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateBookForAuthor(Book book)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBook(Book book)
-        {
-            throw new NotImplementedException();
+            // no code in this implementation
         }
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            return (_context.SaveChanges() >= 0);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+               // dispose resources when needed
+            }
         }
     }
 }

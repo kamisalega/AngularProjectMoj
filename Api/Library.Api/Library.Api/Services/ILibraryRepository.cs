@@ -8,6 +8,11 @@ namespace Library.Api.Services
 {
     public interface ILibraryRepository
     {
+        IEnumerable<Book> GetBooks(Guid authorId);
+        Book GetBook(Guid authorId, Guid bookId);
+        void AddBook(Guid authorId, Book book);
+        void UpdateBook(Book book);
+        void DeleteBook(Book book);
         IEnumerable<Author> GetAuthors();
         Author GetAuthor(Guid authorId);
         IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds);
@@ -15,11 +20,6 @@ namespace Library.Api.Services
         void DeleteAuthor(Author author);
         void UpdateAuthor(Author author);
         bool AuthorExists(Guid authorId);
-        IEnumerable<Book> GetBooksForAuthor(Guid authorId);
-        Book GetBookForAuthor(Guid authorId, Guid bookId);
-        void AddBookForAuthor(Guid authorId, Book book);
-        void UpdateBookForAuthor(Book book);
-        void DeleteBook(Book book);
         bool Save();
     }
 }

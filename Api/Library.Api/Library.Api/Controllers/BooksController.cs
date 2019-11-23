@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Library.Api.Controllers
 {
     [Route("api/authors/{authorId}/books")]
-    public class BooksController: Controller
+    [ApiController]
+    public class BooksController: ControllerBase
     {
         private ILibraryRepository _libraryRepository; 
         private readonly IMapper _mapper;
@@ -17,20 +18,20 @@ namespace Library.Api.Controllers
         
         public BooksController(ILibraryRepository libraryRepository, IMapper mapper)
         {
-            _libraryRepository = libraryRepository;
-            _mapper = mapper;
+            _libraryRepository = libraryRepository ?? throw new ArgumentNullException(nameof(libraryRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
 
         }
     
         [HttpGet()]
-        public IActionResult GetBooksForAuthor(Guid authorId)
+        public ActionResult<IEnumerable<BookDto>> GetBooksForAuthor(Guid authorId)
         {
             if (!_libraryRepository.AuthorExists(authorId))
             {
                 return NotFound();
             }
 
-            var booksForAuthorFromRepo = _libraryRepository.GetBooksForAuthor(authorId);
+            var booksForAuthorFromRepo = _libraryRepository.GetBooks(authorId);
 
             var booksForAuthor = _mapper.Map<IEnumerable<BookDto>>(booksForAuthorFromRepo);
 
@@ -38,14 +39,14 @@ namespace Library.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetBookForAuthor(Guid authorId, Guid id)
+        public ActionResult GetBookForAuthor(Guid authorId, Guid id)
         {
             if (!_libraryRepository.AuthorExists(authorId))
             {
                 return NotFound();
             }
             
-            var bookForAuthorFromRepo = _libraryRepository.GetBookForAuthor(authorId, id);
+            var bookForAuthorFromRepo = _libraryRepository.GetBook(authorId, id);
 
             if (bookForAuthorFromRepo == null)
             {

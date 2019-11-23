@@ -23,7 +23,6 @@ namespace Library.Api
 {
     public class Startup
     {
-        public static IConfigurationRoot Configuration;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -35,34 +34,31 @@ namespace Library.Api
             Configuration = builder.Build();
         }
 
-        
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(setupAction =>
-            {
-                setupAction.ReturnHttpNotAcceptable = true;
-                setupAction.OutputFormatters.Add( new XmlDataContractSerializerOutputFormatter());
-            });
+            services.AddControllers(
+                    setupActions =>
+                    {
+                        setupActions.ReturnHttpNotAcceptable = false;
+                        setupActions.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+                    });
 
             // register the DbContext on the container, getting the connection string from
             // appSettings (note: use this during development; in a production environment,
             // it's better to store the connection string in an environment variable)
             var connectionString = Configuration["connectionStrings:libraryDBConnectionString"];
-            services.AddDbContext<LibraryContext>(o => o.UseSqlServer(connectionString));
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddDbContext<LibraryContext>(options => options.UseSqlServer(connectionString));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // register the repository
             services.AddScoped<ILibraryRepository, LibraryRepository>();
-
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, LibraryContext libraryContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -70,16 +66,18 @@ namespace Library.Api
             else
             {
                 app.UseExceptionHandler(appBuilder => appBuilder.Run(
-                    async contex =>
+                    async context =>
                     {
-                        contex.Response.StatusCode = 500;
-                        await contex.Response.WriteAsync("Nieoczekaiwny błąd. Spróbuj ponownie później.");
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("Nieoczekaiwny błąd. Spróbuj ponownie później.");
                     }));
             }
 
-           
+            app.UseRouting();
 
-            app.UseMvc(); 
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
