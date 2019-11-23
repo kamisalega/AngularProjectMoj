@@ -14,6 +14,7 @@ namespace Library.Api.Services
         void UpdateBook(Book book);
         void DeleteBook(Book book);
         IEnumerable<Author> GetAuthors();
+        IEnumerable<Author> GetAuthors(string genre);
         Author GetAuthor(Guid authorId);
         IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds);
         void AddAuthor(Author author);

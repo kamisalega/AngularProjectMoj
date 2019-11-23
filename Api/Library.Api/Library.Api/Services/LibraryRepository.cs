@@ -16,7 +16,7 @@ namespace Library.Api.Services
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-       public void AddBook(Guid authorId, Book book)
+        public void AddBook(Guid authorId, Book book)
         {
             if (authorId == Guid.Empty)
             {
@@ -27,16 +27,17 @@ namespace Library.Api.Services
             {
                 throw new ArgumentNullException(nameof(book));
             }
+
             // always set the AuthorId to the passed-in authorId
             book.AuthorId = authorId;
-            _context.Books.Add(book); 
-        }         
+            _context.Books.Add(book);
+        }
 
         public void DeleteBook(Book book)
         {
             _context.Books.Remove(book);
         }
-  
+
         public Book GetBook(Guid authorId, Guid bookId)
         {
             if (authorId == Guid.Empty)
@@ -49,8 +50,7 @@ namespace Library.Api.Services
                 throw new ArgumentNullException(nameof(bookId));
             }
 
-            return _context.Books
-              .Where(c => c.AuthorId == authorId && c.Id == bookId).FirstOrDefault();
+            return _context.Books.FirstOrDefault(c => c.AuthorId == authorId && c.Id == bookId);
         }
 
         public IEnumerable<Book> GetBooks(Guid authorId)
@@ -61,8 +61,8 @@ namespace Library.Api.Services
             }
 
             return _context.Books
-                        .Where(c => c.AuthorId == authorId)
-                        .OrderBy(c => c.Title).ToList();
+                .Where(c => c.AuthorId == authorId)
+                .OrderBy(c => c.Title).ToList();
         }
 
         public void UpdateBook(Book book)
@@ -107,7 +107,7 @@ namespace Library.Api.Services
 
             _context.Authors.Remove(author);
         }
-        
+
         public Author GetAuthor(Guid authorId)
         {
             if (authorId == Guid.Empty)
@@ -122,7 +122,18 @@ namespace Library.Api.Services
         {
             return _context.Authors.ToList<Author>();
         }
-         
+
+        public IEnumerable<Author> GetAuthors(string genre)
+        {
+            if (string.IsNullOrWhiteSpace(genre))
+            {
+                return GetAuthors();
+            }
+
+            genre = genre.Trim();
+            return _context.Authors.Where(a => a.Genre == genre).ToList();
+        }
+
         public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)
         {
             if (authorIds == null)
@@ -156,7 +167,7 @@ namespace Library.Api.Services
         {
             if (disposing)
             {
-               // dispose resources when needed
+                // dispose resources when needed
             }
         }
     }
