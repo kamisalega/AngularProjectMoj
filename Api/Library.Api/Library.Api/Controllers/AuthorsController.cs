@@ -2,15 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AutoMapper;
-using Library.Api.Helpers;
 using Library.Api.Models;
 using Library.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Api.Controllers
 {
-   [Route("api/authors")]
-    public class AuthorsController : Controller
+    [Route("api/authors")]
+    [ApiController]
+    public class AuthorsController : ControllerBase
     {
 
         private ILibraryRepository _libraryRepository;
@@ -18,32 +18,23 @@ namespace Library.Api.Controllers
         
         public AuthorsController(ILibraryRepository libraryRepository, IMapper mapper)
         {
-            _libraryRepository = libraryRepository;
-            _mapper = mapper;
+            _libraryRepository = libraryRepository ?? throw new ArgumentNullException(nameof(libraryRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         
         
         [HttpGet()]
-        public IActionResult GetAuthors()
+        public ActionResult<IEnumerable<AuthorDto>> GetAuthors()
         {
-            try
-            {
-                
                 var authorsFromRepo = _libraryRepository.GetAuthors();
             
                 var authors = _mapper.Map<IEnumerable<AuthorDto>>(authorsFromRepo);
 
                 return Ok(authors);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Wydażył się nieoczekiwany błąd. Spróbuj później.");
-            }            
-           
         }
 
         [HttpGet("{id}")]
-        public IActionResult GeTAuthor(Guid id)
+        public ActionResult GetAuthor(Guid id)
         {
             
             var authorFromRepo = _libraryRepository.GetAuthor(id);
