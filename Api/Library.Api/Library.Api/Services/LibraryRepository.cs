@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Library.Api.Entities;
 using Library.Api.Helpers;
 using System.Linq;
+using Library.Api.ResourceParameters;
 
 namespace Library.Api.Services
 {
@@ -123,28 +124,35 @@ namespace Library.Api.Services
             return _context.Authors.ToList<Author>();
         }
 
-        public IEnumerable<Author> GetAuthors(string genere, string searchQuery)
+        public IEnumerable<Author> GetAuthors(AuthorsResourceParameters authorsResourceParameters)
         {
-            if (string.IsNullOrWhiteSpace(genere) && string.IsNullOrWhiteSpace(searchQuery))
+            if (authorsResourceParameters == null)
+            {
+                throw new ArgumentNullException(nameof(authorsResourceParameters));
+            }
+
+            if (string.IsNullOrWhiteSpace(authorsResourceParameters.Genere) &&
+                string.IsNullOrWhiteSpace(authorsResourceParameters.SearchQuery))
             {
                 return GetAuthors();
             }
 
             var collection = _context.Authors as IQueryable<Author>;
-            
-            if (!string.IsNullOrWhiteSpace(genere))
+
+            if (!string.IsNullOrWhiteSpace(authorsResourceParameters.Genere))
             {
-                genere = genere.Trim();
-                collection = collection.Where(a => a.Genre == genere);
+                authorsResourceParameters.Genere = authorsResourceParameters.Genere.Trim();
+                collection = collection.Where(a => a.Genre == authorsResourceParameters.Genere);
             }
-            
-            if (!string.IsNullOrWhiteSpace(searchQuery))
+
+            if (!string.IsNullOrWhiteSpace(authorsResourceParameters.SearchQuery))
             {
-                searchQuery = searchQuery.Trim();
-                collection = collection.Where(a => a.Genre.Contains(searchQuery)||
-                                                   a.FirstName.Contains(searchQuery)||
-                                                   a.LastName.Contains(searchQuery));
+                authorsResourceParameters.SearchQuery = authorsResourceParameters.SearchQuery.Trim();
+                collection = collection.Where(a => a.Genre.Contains(authorsResourceParameters.SearchQuery) ||
+                                                   a.FirstName.Contains(authorsResourceParameters.SearchQuery) ||
+                                                   a.LastName.Contains(authorsResourceParameters.SearchQuery));
             }
+
             return collection.ToList();
         }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Library.Api.Entities;
 using Library.Api.Helpers;
+using Library.Api.ResourceParameters;
 
 namespace Library.Api.Services
 {
@@ -14,7 +15,7 @@ namespace Library.Api.Services
         void UpdateBook(Book book);
         void DeleteBook(Book book);
         IEnumerable<Author> GetAuthors();
-        IEnumerable<Author> GetAuthors(string genre, string searchQuery);
+        IEnumerable<Author> GetAuthors(AuthorsResourceParameters authorsResourceParameters);
         Author GetAuthor(Guid authorId);
         IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds);
         void AddAuthor(Author author);
