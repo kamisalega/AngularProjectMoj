@@ -123,15 +123,29 @@ namespace Library.Api.Services
             return _context.Authors.ToList<Author>();
         }
 
-        public IEnumerable<Author> GetAuthors(string genre)
+        public IEnumerable<Author> GetAuthors(string genere, string searchQuery)
         {
-            if (string.IsNullOrWhiteSpace(genre))
+            if (string.IsNullOrWhiteSpace(genere) && string.IsNullOrWhiteSpace(searchQuery))
             {
                 return GetAuthors();
             }
 
-            genre = genre.Trim();
-            return _context.Authors.Where(a => a.Genre == genre).ToList();
+            var collection = _context.Authors as IQueryable<Author>;
+            
+            if (!string.IsNullOrWhiteSpace(genere))
+            {
+                genere = genere.Trim();
+                collection = collection.Where(a => a.Genre == genere);
+            }
+            
+            if (!string.IsNullOrWhiteSpace(searchQuery))
+            {
+                searchQuery = searchQuery.Trim();
+                collection = collection.Where(a => a.Genre.Contains(searchQuery)||
+                                                   a.FirstName.Contains(searchQuery)||
+                                                   a.LastName.Contains(searchQuery));
+            }
+            return collection.ToList();
         }
 
         public IEnumerable<Author> GetAuthors(IEnumerable<Guid> authorIds)
