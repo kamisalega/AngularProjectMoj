@@ -62,7 +62,7 @@ namespace Library.Api.Controllers
 
             if (!_libraryRepository.Save())
                 throw new Exception("Creating an author failed on save");
-//                return StatusCode(500, "A problem happened with handling your request.");
+
 
             var authorToReturn = _mapper.Map<AuthorDto>(authorEntity);
 
