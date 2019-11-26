@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Library.Api.ValidationAttributes;
 
 namespace Library.Api.Models
 {
-    public class BookForCreationDto : IValidatableObject
+    [BookValidationAttributes]
+    public class BookForCreationDto 
     {
         [Required] 
         [MaxLength(100)] 
@@ -11,15 +13,5 @@ namespace Library.Api.Models
         
         [MaxLength(1500)] 
         public string Description { get; set; }
-
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            if (Title == Description)
-            {
-                yield  return new ValidationResult(
-                    "The provided description should be different from the title.", new []{"BooksForCreationDto"}
-                    );
-            }
-        }
     }
 }
