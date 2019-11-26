@@ -80,5 +80,12 @@ namespace Library.Api.Controllers
 
             return NotFound();
         }
+
+        [HttpOptions]
+        public ActionResult GetAuthorsOptions()
+        {
+            Response.Headers.Add("Allow", "GET, OPTIONS, POST");
+            return Ok();
+        }
     }
 }
