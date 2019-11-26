@@ -42,9 +42,9 @@ namespace Library.Api
             services.AddControllers(
                     setupActions =>
                     {
-                        setupActions.ReturnHttpNotAcceptable = false;
-                        setupActions.OutputFormatters.Add(new XmlSerializerOutputFormatter());
-                    });
+                        setupActions.ReturnHttpNotAcceptable = true;
+                       
+                    }).AddXmlDataContractSerializerFormatters();
 
             // register the DbContext on the container, getting the connection string from
             // appSettings (note: use this during development; in a production environment,

@@ -8,6 +8,8 @@ namespace Library.Api.Entities.Profile
         {
             CreateMap<Entities.Book, Models.BookDto>();
 
+            CreateMap<Models.BookForCreationDto, Entities.Book>();
+
         }
     }
 }
