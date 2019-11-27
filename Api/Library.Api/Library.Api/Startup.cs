@@ -44,7 +44,11 @@ namespace Library.Api
                     {
                         setupActions.ReturnHttpNotAcceptable = true;
                        
-                    }).AddXmlDataContractSerializerFormatters();
+                    }).AddXmlDataContractSerializerFormatters()
+                .ConfigureApiBehaviorOptions(setupAction =>
+                {
+                    setupAction.InvalidModelStateResponseFactory
+                });
 
             // register the DbContext on the container, getting the connection string from
             // appSettings (note: use this during development; in a production environment,
