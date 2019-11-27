@@ -40,11 +40,29 @@ namespace Library.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(
-                    setupActions =>
+                    setupActions => { setupActions.ReturnHttpNotAcceptable = true; })
+                .AddXmlDataContractSerializerFormatters()
+                .ConfigureApiBehaviorOptions(setupAction =>
+                {
+                    setupAction.InvalidModelStateResponseFactory = context =>
                     {
-                        setupActions.ReturnHttpNotAcceptable = true;
-                       
-                    }).AddXmlDataContractSerializerFormatters();
+                        var problemDetails = new ValidationProblemDetails(context.ModelState)
+                        {
+                            Type = "https://library.com/modelvalidationproblem",
+                            Title = "One more validation errors occurred.",
+                            Status = StatusCodes.Status422UnprocessableEntity,
+                            Detail = "See the errors property for details.",
+                            Instance = context.HttpContext.Request.Path
+                        };
+
+                        problemDetails.Extensions.Add("traceId", context.HttpContext.TraceIdentifier);
+
+                        return new UnprocessableEntityObjectResult(problemDetails)
+                        {
+                            ContentTypes = {"application/problem+json"}
+                        };
+                    };
+                });
 
             // register the DbContext on the container, getting the connection string from
             // appSettings (note: use this during development; in a production environment,
