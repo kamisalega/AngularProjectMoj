@@ -82,5 +82,27 @@ namespace Library.Api.Controllers
                 id = bookToReturn.Id
             }, bookToReturn);
         }
+
+        [HttpPut("{bookId}")]
+        public ActionResult UpdateBookForAuthor(Guid authorId, Guid bookId, BookForCreationDto bookForCreationDto)
+        {
+            if (!_libraryRepository.AuthorExists(authorId))
+            {
+                return NotFound();
+            }
+
+            var bookForAuthorFromRepo = _libraryRepository.GetBook(authorId, bookId);
+
+            if (bookForAuthorFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(bookForCreationDto, bookForAuthorFromRepo);
+            
+            _libraryRepository.UpdateBook(bookForAuthorFromRepo);
+            
+            return null;
+        }
     }
 }

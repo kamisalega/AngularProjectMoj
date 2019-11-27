@@ -10,6 +10,8 @@ namespace Library.Api.Entities.Profile
 
             CreateMap<Models.BookForCreationDto, Entities.Book>();
 
+            CreateMap<Models.BookForUpdateDto, Entities.Book>();
+
         }
     }
 }
