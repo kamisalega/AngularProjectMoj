@@ -12,7 +12,7 @@ namespace Library.Api.ValidationAttributes
             {
                 return new ValidationResult
                 (
-                    "The provided description should be different from the title.", new[] {nameof(BookForCreationDto)}
+                    ErrorMessage, new[] {nameof(BookForCreationDto)}
                 );
             }
 
