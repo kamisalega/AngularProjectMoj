@@ -13,7 +13,8 @@ import {
     EventMainSectionComponent,
     CreateSessionComponent,
     SessionListComponent,
-    DurationPipe
+    DurationPipe,
+    UpvoteComponent
 } from './events/index';
 import {
     JQ_TOKEN, 
@@ -54,7 +55,8 @@ let jQuery = window['$'];
         CollapsibleWellComponent,
         DurationPipe,
         SimpleModalComponent,
-        ModalTriggerDirective
+        ModalTriggerDirective,
+        UpvoteComponent
     ],
     imports: [
         BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule
