@@ -13,6 +13,7 @@ import {
     EventMainSectionComponent,
     CreateSessionComponent,
     SessionListComponent,
+    VoterService,
     DurationPipe,
     UpvoteComponent
 } from './events/index';
@@ -22,8 +23,8 @@ import {
     Toastr, 
     CollapsibleWellComponent, 
     SimpleModalComponent, 
-    JQueryService,
-    ModalTriggerDirective
+    JQueryService
+
 } from './common/index';
 import {NavBarComponent} from './nav/nav-bar.component';
 import {appRoutes} from "../routes";
@@ -33,7 +34,7 @@ import {EventsAppComponent} from "./events/events-app/events-app.component";
 import {Error404Component} from './errors/error404/error404.component';
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import {ModalTriggerDirective} from "./common/modal-trigger.directive";
 
 
 let toastr: Toastr = window['toastr'];
@@ -73,6 +74,7 @@ let jQuery = window['$'];
         },
         EventRouteActivatorService,
         EventsListResolverService,
+        VoterService,
         AuthService,
 
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState}
