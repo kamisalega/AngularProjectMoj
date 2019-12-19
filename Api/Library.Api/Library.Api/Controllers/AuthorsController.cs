@@ -26,8 +26,7 @@ namespace Library.Api.Controllers
         }
 
         [HttpGet()]
-        [HttpHead]
-        public ActionResult<IEnumerable<AuthorDto>> GetAuthors(AuthorsResourceParameters authorsResourceParameters)
+        public ActionResult<IEnumerable<AuthorDto>> GetAuthors([FromQuery]AuthorsResourceParameters authorsResourceParameters)
         {
             var authorsFromRepo = _libraryRepository.GetAuthors(authorsResourceParameters);
 
