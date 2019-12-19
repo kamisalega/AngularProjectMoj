@@ -20,8 +20,7 @@
     "Library.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/authors",
-      "applicationUrl": "https://localhost:51046;http://localhost:51045",
+      "applicationUrl": "http://localhost:51045",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

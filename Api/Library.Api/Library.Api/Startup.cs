@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -75,17 +75,16 @@ namespace Library.Api
            
             // register the repository
             services.AddScoped<ILibraryRepository, LibraryRepository>();
-            
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(setupAction =>
             {
                 setupAction.SwaggerDoc("LibraryOpenApiSpecification", new OpenApiInfo()
-                    {
-                        Title = "Library API",
-                        Version = "1"
-                    }
-                );
+                {
+                    Title = "Library API",
+                    Version = "1"
+                });
             });
         }
 
@@ -106,13 +105,21 @@ namespace Library.Api
                     }));
             }
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/LibraryOpenApiSpecification/swagger.json",
+                    "Library Api"
+                );
+                setupAction.RoutePrefix = "";
+            });
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
-            app.UseSwagger(); 
         }
     }
 }
