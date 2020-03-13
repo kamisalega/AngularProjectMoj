@@ -8,7 +8,6 @@ import {
     EventService,
     CreateEventComponent,
     EventsListResolverService,
-    EventRouteActivatorService,
     EventDetailsComponent,
     EventAboutComponent,
     EventMainSectionComponent,
@@ -17,7 +16,8 @@ import {
     VoterService,
     DurationPipe,
     UpvoteComponent,
-    LocationValidatorDirective
+    LocationValidatorDirective, 
+    EventResolverService
 } from './events/index';
 import {
     JQ_TOKEN,
@@ -62,9 +62,9 @@ let jQuery = window['$'];
         LocationValidatorDirective
     ],
     imports: [
-        BrowserModule, 
+        BrowserModule,
         FormsModule,
-        RouterModule.forRoot(appRoutes), 
+        RouterModule.forRoot(appRoutes),
         ReactiveFormsModule,
         HttpClientModule
     ],
@@ -78,7 +78,7 @@ let jQuery = window['$'];
             provide: JQ_TOKEN,
             useValue: jQuery
         },
-        EventRouteActivatorService,
+        EventResolverService,
         EventsListResolverService,
         VoterService,
         AuthService,

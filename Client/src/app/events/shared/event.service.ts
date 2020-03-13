@@ -8,26 +8,17 @@ import {catchError} from "rxjs/operators";
 export class EventService {
 
     constructor(private http: HttpClient) {
-        
+
     }
 
     getEvents(): Observable<IEvent[]> {
-        let subject = new Subject()
         return this.http.get<IEvent[]>('/api/events')
             .pipe(catchError(this.handleError<IEvent[]>('getEvents', [])))
     }
-    
-    
-    private handleError<T>(operation= 'operation', result?: T){
-        return (error: any): Observable<T> => {
-            console.error(error);
-            return of(result);
-        }
-    }
 
-    getEvent(id: number): IEvent {
-
-        return EVENTS.find(event => event.id === id);
+    getEvent(id: number): Observable<IEvent> {
+        return this.http.get<IEvent>('/api/events/' + id)
+            .pipe(catchError(this.handleError<IEvent>('getEvents')))
     }
 
     saveEvent(event) {
@@ -62,6 +53,13 @@ export class EventService {
             emitter.emit(results)
         }, 100);
         return emitter;
+    }
+
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+            console.error(error);
+            return of(result);
+        }
     }
 }
 
