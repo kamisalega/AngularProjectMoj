@@ -17,12 +17,7 @@ class Main {
             title: 'Jane Doe Checking',
             balance: 5000
         });
-        this.savingsAccount = new SavingsAccount({
-            id: 100,
-            title: 'Jane Doe Savings',
-            balance: 10000,
-            interestRate: 2.5
-        });
+        
         this.renderAccount();
     }
 
@@ -66,6 +61,7 @@ class Main {
             else {
                 this.currentAccount.withdrawal(amount);
             }
+            this.renderAccount();
         }
         catch (e) {
             error = e;
