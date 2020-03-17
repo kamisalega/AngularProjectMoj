@@ -24,9 +24,9 @@ export class AuthService {
                 this.currentUser = <IUser>data['user'];
             }))
             .pipe(catchError(err => {
-              return of(false)
+                return of(false)
             }))
-                
+
     }
 
     isAuthenticated() {
@@ -35,7 +35,15 @@ export class AuthService {
 
     updateCurrentUser(firstName: string, lastName: string) {
 
-        this.currentUser.firstName = firstName
-        this.currentUser.lastName = lastName
+        this.currentUser.firstName = firstName;
+        this.currentUser.lastName = lastName;
+    }
+
+    checkAuthenticationStatus() {
+         this.http.get('/api/currentIdentity').pipe(tap(data => {
+            if (data instanceof Object) {
+                this.currentUser = <IUser>data;
+            }
+        })).subscribe();
     }
 }
