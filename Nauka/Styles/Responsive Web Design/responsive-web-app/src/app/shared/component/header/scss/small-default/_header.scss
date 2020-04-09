@@ -1,0 +1,17 @@
+@import "../../../../../../assets/scss/variables";
+
+.library-header {
+  background-color: $g-root__color--primary--01a;
+  color: $g-root__color--primary--02a;
+  padding: 1rem $gutter;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: $g-root__weight-normal;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    font-weight: $g-root__weight-normal;
+  }
+}

@@ -1,0 +1,33 @@
+@import "variables";
+@import "fonts";
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/*  apply a natural box layout model to all elements  */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+//Overall styling for the Body of the document.
+@import "../../../src/app/scss/small-default/globals";
+
+//Overall styling for the Main of the document.
+@import "../../../src/app/scss/small-default/content";
+
+//Overall styling for the Footer of the document.
+@import "../../../src/app/scss/small-default/footer";
+
+
+body {
+  font-family: $g-root__default--font;
+  font-weight: $g-root__weight-normal;
+}
+
+

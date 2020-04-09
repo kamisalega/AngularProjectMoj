@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/reset";
+@import "assets/scss/small-default";
+@import "assets/scss/variables";
+@import "assets/scss/fonts";
+
+@media only screen and (min-width: 35rem) {
+  @import "assets/scss/medium";
+}
+
+// end media query
+
+@media only screen and (min-width: 60rem) {
+  @import "assets/scss/large";
+}
+// end media query
