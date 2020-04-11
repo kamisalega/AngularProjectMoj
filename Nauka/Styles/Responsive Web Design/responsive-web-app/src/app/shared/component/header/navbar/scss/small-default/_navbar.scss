@@ -1,0 +1,51 @@
+@import "../../../../../../../assets/scss/variables";
+
+nav {
+  background-color: $g-root__color--primary--02a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+
+  ul li {
+    float: left;
+    width: 20%;
+  }
+
+  ul li a {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-weight: $g-root__bold-normal;
+    padding: .5rem 0;
+    color: $g-root__color--primary--01a;
+    text-decoration: none;
+
+  }
+
+  ul li a::before {
+    position: absolute;
+    top: 87%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $g-root__color--primary--01a;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  ul li a:hover::before,
+  ul li a:focus::before {
+    height: 5px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+}
+

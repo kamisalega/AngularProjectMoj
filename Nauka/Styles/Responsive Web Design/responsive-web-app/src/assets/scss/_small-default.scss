@@ -1,5 +1,6 @@
 @import "variables";
 @import "fonts";
+@import "effects";
 
 /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
 html {
@@ -30,4 +31,9 @@ body {
   font-weight: $g-root__weight-normal;
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 

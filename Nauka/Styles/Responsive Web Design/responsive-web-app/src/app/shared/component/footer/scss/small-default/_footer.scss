@@ -1,0 +1,18 @@
+@import "../../../../../../assets/scss/variables";
+
+
+footer {
+  width: 100%;
+  background-color: $g-root__color--primary--01a;
+
+  p {
+    text-align: center;
+    color: $g-root__color--primary--02a;
+    padding: .75rem 0;
+    font-size: .9rem;
+  }
+
+  p a {
+    color: $g-root__color--primary--02a;
+  }
+}
