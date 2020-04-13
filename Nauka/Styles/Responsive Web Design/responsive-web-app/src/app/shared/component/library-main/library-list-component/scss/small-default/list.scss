@@ -12,3 +12,18 @@ hr.fadeAway {
   border: none;
   margin: 0 $gutter;
 }
+
+figure.photo {
+  width: 100% - $gutterdbl;
+  margin: .5rem $gutter;
+}
+
+figure.photo img {
+  width: 100%;
+}
+
+figure.photo figcaption {
+  text-align: center;
+  color: $g-root__color--primary--01a;
+}
+
