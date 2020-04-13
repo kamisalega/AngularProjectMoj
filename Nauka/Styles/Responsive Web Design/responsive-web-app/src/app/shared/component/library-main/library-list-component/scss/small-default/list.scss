@@ -1,0 +1,14 @@
+@import "../../../../../../../../src/assets/scss/variables";
+
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0 0 $gutter;
+  color: $g-root__color--primary--01a
+}
+
+hr.fadeAway {
+  background: linear-gradient(to right, rgba(66, 78, 100, 1) 0%, rgba(66, 78, 100, 0.01) 100%);
+  height: 2px;
+  border: none;
+  margin: 0 $gutter;
+}

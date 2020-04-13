@@ -26,52 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d419cf37-d9b7-4832-b09c-a85fb9bf3ea6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/scss/small-default/_content.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/scss/small-default/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/header.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/navbar/navbar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/navbar/navbar.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/navbar/navbar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/navbar/navbar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/scss/_globals.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/scss/large/_globals.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/scss/medium/_globals.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/shared/component/header/scss/small-default/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Black/Lato-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Black/Lato-Black.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Bold/Lato-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Bold/Lato-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Light/Lato-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Light/Lato-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Regular/Lato-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Regular/Lato-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Thin/Lato-Hairline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/fonts/Thin/Lato-Hairline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_large.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_medium.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_small-default.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/assets/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Library.Api/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library.Api/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Library.Api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Library.Api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/Library.Api.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/.idea/.idea.Client.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/.idea/.idea.Client.dir/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../Nauka/Styles/Responsive Web Design/responsive-web-app/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.Api/obj/Debug/netcoreapp3.0/Library.Api.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Library.Api/obj/Debug/netcoreapp3.0/Library.Api.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +38,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library.Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library.Api/Models/AuthorDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library.Api/Helpers/ArrayModelBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Helpers/DateTimeOffsetExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Entities/Author.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Entities/Book.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library.Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Services/ILibraryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Services/LibraryRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library.Api/Models/AuthorDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library.Api/DBContexts/LibraryContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Controllers/AuthorsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library.Api/Controllers/AuthorCollectionsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library.Api/app.config" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -100,7 +59,6 @@
         <option value="$PROJECT_DIR$/Library.Api/Helpers/PagedList.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Helpers/AuthorsResourceParameters.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Entities/Book.cs" />
-        <option value="$PROJECT_DIR$/Library.Api/Entities/Author.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Program.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Entities/LibraryContext.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Entities/LibraryContextExtensions.cs" />
@@ -114,6 +72,7 @@
         <option value="$PROJECT_DIR$/Library.Api/Startup.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Entities/Profile/AuthorMappingProfile.cs" />
         <option value="$PROJECT_DIR$/Library.Api/Controllers/AuthorsController.cs" />
+        <option value="$PROJECT_DIR$/Library.Api/Entities/Author.cs" />
       </list>
     </option>
   </component>
@@ -194,6 +153,7 @@
       <workItem from="1570395425840" duration="7436000" />
       <workItem from="1570561348253" duration="4988000" />
       <workItem from="1586213490353" duration="76000" />
+      <workItem from="1586719416642" duration="525000" />
     </task>
     <servers />
   </component>
