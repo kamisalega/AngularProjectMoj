@@ -25,7 +25,7 @@
     "ngf-bootstrap": "0.0.5",
     "rxjs": "6.3.3",
     "toastr": "^2.1.4",
-    "yarn": "^1.16.0",
+    "yarn": "^1.22.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
